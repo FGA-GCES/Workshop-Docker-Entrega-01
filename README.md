@@ -47,7 +47,7 @@ Para realizar esta parte do trabalho, recomenda-se a utilização das ferramenta
 
 A nota de cada aluno será a soma dos itens abaixo que serão avaliados tanto de forma quantitativa (se foi realizado a implementação + documentação), quanto qualitativamente (como foi implementado, entendimento dos conceitos na prática, complexidade da solução). Faça os commits atômicos, bem documentados, completos a fim de facilitar o entendimento e avaliação do seu trabalho. Lembrando que esse trabalho é individual. 
 
-Os Itens de avaliação são (cada item tem peso 1 na nota final de 0 - 10):
+Os Itens de avaliação são (cada item tem peso 2.5 na nota final de 0 - 10):
 
 **1. Containerização**
 
