@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    volumes:
+      - ./backend:/app
+    environment:
+      DB_CONNECTION: ${DB_CONNECTION}
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+
+  db:
+    image: postgres:11.5-alpine
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data:cached
+    networks:
+      - app_network
+
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    volumes:
+      - ./frontend:/frontend
+      - node_modules_front:/frontend/node_modules  
+    networks:
+      - app_network
+
+
+networks:
+  app_network:
+
+
+volumes:
+  db_data:
+  node_modules_front: 
