@@ -1,0 +1,13 @@
+FROM ubuntu
+
+RUN groupadd -r mygroup \
+    && groupadd -r mygroup2 \
+    && useradd -g mygroup myuser --groups mygroup2
+
+USER myuser
+
+COPY --chown=myuser:mygroup run-my-app.sh /usr/local/bin/run-my-app.sh
+
+RUN chmod +x /usr/local/bin/run-my-app.sh
+
+ENTRYPOINT ["/usr/local/bin/run-my-app.sh"]
