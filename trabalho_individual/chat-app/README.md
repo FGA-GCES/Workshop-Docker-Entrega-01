@@ -1,4 +1,4 @@
-# Express.js & ORM
+# React
 
 ## Pré-requisitos
 
@@ -29,3 +29,6 @@ yarn watch
 ```
 
 Acesse o app em [http://localhost:7001](http://localhost:7001).
+
+> OBS: Caso tenha alterado a porta do [`api-gateway`](../api-gateway/README.md), modifique o arquivo `.env`
+> obs2: não é boa pratica subir o `.env`, mas por questões de simplicidade o arquivo fora deixado aí
