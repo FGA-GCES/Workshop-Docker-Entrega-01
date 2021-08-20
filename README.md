@@ -4,19 +4,76 @@ A Gestão de Configuração de Software é parte fundamental no curso de GCES, e
 
 Para exercitar estes conhecimentos, você deverá aplicar os conceitos estudados ao longo da disciplina no produto de software contido neste repositório.
 
-O sistema se trata de uma aplicação Web que é composta de:
+O sistema se trata de uma aplicação Web em Typescript, que é composta de:
 
-- Front-end escrito em Javascript, utilizando os frameworks Next.js + SWR;
-- Back-end escrito em Python, utilizando o framework FastAPI;
-- Banco de Dados PostgreSQL;
+- Front-end escrito em React (`chat-app`);
+- Back-end dividido em três microsserviços:
+  - `users-service`: express + ORM
+  - `chat-service`: não implementado
+  - `api-gateway`: graphql
+- 2 Bancos de Dados MySQL 5.7.20 para users-service e chat-service (mesmo este não tendo sido implementado ainda)
+  - `phpmyadmin`, como interface para gerenciamento dos bancos de dados
 
-Para executar a aplicação em sua máquina, basta seguir o passo-a-passo descrito no arquivos s README das pastas [backend](./backend/README.md) e [frontend](./frontend/README.md).
+Para executar a aplicação em sua máquina, basta seguir o passo-a-passo descrito no arquivos README das pastas.
+
+- [users-service](./trabalho_individual/users-service/README.md)
+- [chat-service](./trabalho_individual/chat-service/README.md).
+- [api-gateway](./trabalho_individual/api-gateway/README.md).
+- [chat-app](./trabalho_individual/chat-app/README.md).
+- [phpmyadmin](./trabalho_individual/phpmyadmin/README.md).
 
 ## Resumo da aplicação
 
-Essa aplicação é um blog + rede social (clone do Medium.com) chamado de "Conduit". Para ver uma demo funcionando, clique aqui: [https://next-realworld.now.sh/](https://next-realworld.now.sh/)
+É uma aplicação extremamente simples, não possui muitas features, então o foco é justamente na containerização (e orquestração) dessa aplicação. Por ora, só é possivel fazer login (alem de interagir com o banco etc)
 
-## Exemplos Anteriores
+Aqui um esquema simples de como a aplicação se comunica:
+
+![diagrama](https://imgur.com/RKfPSxI.png)
+
+### Prints de telas da aplicação
+
+#### Frontend - chat-app
+
+<figure>
+<img
+src="https://imgur.com/qA6nPGF.png"
+alt="tela de carregamento">
+<figcaption>tela de carregamento</figcaption>
+</figure>
+
+<figure>
+<img
+src="https://imgur.com/rKmSwkF.png"
+alt="tela de login">
+<figcaption>tela de login</figcaption>
+</figure>
+
+<figure>
+<img
+src="https://imgur.com/npIvJhU.png"
+alt="tela pós-login">
+<figcaption>tela pós-login</figcaption>
+</figure>
+
+### phpmyadmin
+
+<figure>
+<img
+src="https://imgur.com/2zUF6QB.png"
+alt="tela de gerenciamento do banco">
+<figcaption>tela de gerenciamento do banco</figcaption>
+</figure>
+
+### api-gateway
+
+<figure>
+<img
+src="https://imgur.com/lWo6F2S.png"
+alt="tela de queries em graphql">
+<figcaption>tela de queries em graphql</figcaption>
+</figure>
+
+## Trabalhos Anteriores
 
 Alguns trabalhos de exemplo do [semestre passado](https://github.com/FGA-GCES/Trabalho-Individual-2020-2):
 
@@ -42,7 +99,6 @@ Para realizar esta parte do trabalho, recomenda-se a utilização das ferramenta
 - Docker versão 17.04.0+
 - Docker Compose com sintaxe na versão 3.2+
 
-
 ## Nota
 
 A nota de cada aluno será a soma dos itens abaixo que serão avaliados tanto de forma quantitativa (se foi realizado a implementação + documentação), quanto qualitativamente (como foi implementado, entendimento dos conceitos na prática, complexidade da solução). Faça os commits atômicos, bem documentados, completos a fim de facilitar o entendimento e avaliação do seu trabalho. Lembrando que esse trabalho é individual. 
@@ -51,8 +107,8 @@ Os Itens de avaliação são (cada item tem peso 2.5 na nota final de 0 - 10):
 
 **1. Containerização**
 
-- Container do Back-end
+- Containers do Back-end
 - Container do Front-end
-- Container do Banco de Dados
+- Containers dos Banco de Dados
+- Container para o phpmyadmin
 - Automação entre os containers (Docker-compose)
-
