@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:16
 
 WORKDIR /app
 
@@ -9,3 +9,5 @@ RUN yarn
 COPY . /app
 
 EXPOSE 7100
+
+CMD yarn watch
