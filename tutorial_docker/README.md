@@ -64,7 +64,7 @@ A imagem é um snapshot da sua aplicação: contém desde as dependencias do seu
 
 ## Exemplo Mínimo
 
-> Não é necessário reproduzir esses comandos, já que praticaremos isso junto no [segundo sub-capítulo](./2_installing_docker.md).
+> Não é necessário reproduzir esses comandos, já que praticaremos isso juntos no [segundo sub-capítulo](./2_container_from_scratch.md).
 
 A partir desse `Dockerfile` de exemplo:
 
